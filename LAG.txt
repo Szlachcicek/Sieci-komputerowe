@@ -1,0 +1,13 @@
+#Link Aggregation Group/EtherChannel
+#PONIŻSZE KOMENDY NA OBU SWITCHACH
+1. PAgP - Port Aggregation Protocol (ciscowy)
+#wybieramy zakres portów
+int r gigX/X/X-Y
+    channel-group *nr grupy* mode desirable
+    exit
+
+
+2. LACP - Link Aggregation Control Protocol (Standard IEEE)
+int r gigX/X/X-Y
+    channel-g *nr grupy* m active
+    exit

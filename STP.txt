@@ -1,0 +1,5 @@
+#np gdy chcemy wykorzystać wszystkie łącza w układzie trójkąta switchów
+spanning-tree vlan *nr* root primary
+sp v *nr* r p #skrócony zapis
+
+#robimy dla jednego switcha roota jednego vlanu, a dla drugiego switcha roota drugiego vlanu

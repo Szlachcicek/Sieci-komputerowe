@@ -1,0 +1,13 @@
+#zależnie czy port prowadzi do naszej sieci czy na zewnątrz sieci
+int gigX/X/X
+    ip nat inside/outside
+
+ip nat pool *nazwa puli* *początkowe IP* *końcowe IP* prefix *nr maski(np 24)* 
+#jeśli jest adres z zewnątrz DHCP to tego nie piszemy, wtedy dla PAT naszym adresem wyjściowym będzie ten otrzymany od dostawcy
+
+access-list *numer listy* permit *adres sieci* *wildcard maski (0.0.0.31 to będzie 31 urządzeń dla danej sieci)*
+#można zrobić standardowo 0.0.0.0 255.255.255.255
+
+ip nat inside source list *numer listy* pool *nazwa puli* overload #overload dla PAT not-overload dla NAT
+lub
+ip nat inside source list *numer listy* interface *numer int na świat* #NAT | dodać overload dla PAT

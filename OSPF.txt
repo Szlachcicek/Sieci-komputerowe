@@ -1,0 +1,7 @@
+router ospf 1 # 1 - nr procesu
+	network 0.0.0.0 255.255.255.255 area 0 #wild card adresu i maski "dla wszystkich"
+
+#jeśli mamy podłączony router do Internetu to musimy zrobić na tym porcie dodatkowo
+	passive-interface gigX/X/X
+	default-information originate
+

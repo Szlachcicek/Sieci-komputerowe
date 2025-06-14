@@ -1,0 +1,23 @@
+#SSH
+#trzeba nadać nazwe switchowi dla SSH
+hostname *nazwa*
+enable password/secret *hasło* #jedno jest bez szyfrowania, drugie z1
+ip domain-name *nazwa*
+username *nazwa* password/secret *hasło*
+
+int vlan *numer vlanu*
+    ip address X.X.X.X Y.Y.Y.Y
+    no shutdown
+    exit
+
+crypto key generate rsa
+#podać numer np 1024
+
+ip ssh version 2
+
+line vty 0 X # X dowolna ilość lini, może być 0 wtedy bedzie 1 linia połączenia zdalnego
+    transport input ssh
+    login local
+
+
+#TELNET

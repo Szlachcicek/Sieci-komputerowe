@@ -1,0 +1,15 @@
+#na routerze wybieramy port
+int gig
+	ip address X.X.X.X Y.Y.Y.Y
+lub
+	ip add dhcp
+
+#router na patyku (subinterfejsy)
+int gigX/X/X.1 #.2 itd
+	encapsulation dot1Q X #X -vlan ID
+	en d X #skrócony zapis
+	ip add X.X.X.X Y.Y.Y.Y #adres routera na subint
+
+int gigX/X/X
+	no shutdown
+

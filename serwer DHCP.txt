@@ -1,0 +1,15 @@
+service dhcp #włączenie
+
+ip dhcp pool *name* #stworzenie puli o nazwie *name*
+	network X.X.X.X Y.Y.Y.Y #sieć o adresie X i masce Y
+	default-router X.X.X.X #potrzebne, adres routera w tej sieci nawet jeśli jest to inny router
+	dns-server X.X.X.X #ten sam co default router albo dowolny np googlowski 8.8.8.8 (raczej niewymagane)
+	domain-name MOJASIEC #nazwa domeny niepotrzebne
+
+ip dhcp excluded-address 192.168.0.1 192.168.0.10 #wykluczenie tego zakresu z rozdawania w DHCP
+
+#jeśli inny router jest serwerem dhcp a połączenie przechodzi przez ten co konfigurujemy to
+#na porcie z którego przyjdzie zapytanie (od kompa/switcha) ustawiamy
+int gigX/X/X lub gigX/X/X.n #jeśli subint
+	ip helper-address X.X.X.X #podajemy adres portu serwera dhcp
+	ip help X.X.X.X #skrócony zapis

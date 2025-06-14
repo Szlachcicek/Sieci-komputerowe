@@ -1,0 +1,13 @@
+VLANy
+(do kompa)
+int gigabX/X/X
+switchport mode access
+switchport access vlan  X
+
+(między switchami wiele portów + inny natywny vlan)
+int range gigX/X/X-Y
+sw m trunk
+sw t native vlan X
+
+#Natywny vlan nie tworzy się tak jak access vlan, trzeba go ręcznie stworzyć
+
