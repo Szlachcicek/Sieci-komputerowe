@@ -21,3 +21,14 @@ line vty 0 X # X dowolna ilość lini, może być 0 wtedy bedzie 1 linia połąc
 
 
 #TELNET
+enable password/secret *hasło* #jedno jest bez szyfrowania, drugie z1
+
+line vty 0 X # X dowolna ilość lini, może być 0 wtedy bedzie 1 linia połączenia zdalnego
+    login local
+
+username *nazwa* password/secret *hasło*
+
+int vlan *numer vlanu*
+    ip address X.X.X.X Y.Y.Y.Y
+    no shutdown
+    exit
