@@ -1,0 +1,2 @@
+monitor session 1 source/destination int ... tx/rx/both #wyjście/wejście/oba
+#source - źródło, destination - gdzie te informacje będą wysyłane

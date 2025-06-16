@@ -6,7 +6,7 @@ ip nat pool *nazwa puli* *początkowe IP* *końcowe IP* prefix *nr maski(np 24)*
 #jeśli jest adres z zewnątrz DHCP to tego nie piszemy, wtedy dla PAT naszym adresem wyjściowym będzie ten otrzymany od dostawcy
 
 access-list *numer listy* permit *adres sieci* *wildcard maski (0.0.0.31 to będzie 31 urządzeń dla danej sieci)*
-#można zrobić standardowo 0.0.0.0 255.255.255.255
+#można zrobić standardowo 0.0.0.0 255.255.255.255 lub any
 
 ip nat inside source list *numer listy* pool *nazwa puli* overload #overload dla PAT not-overload dla NAT
 lub

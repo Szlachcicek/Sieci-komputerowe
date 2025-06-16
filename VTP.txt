@@ -1,0 +1,5 @@
+#serwer vlanów
+vtp version 2 #można zmienić wersję vtp
+vtp mode server/client/transparent
+vtp domain *nazwa*
+vtp password *hasło*

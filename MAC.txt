@@ -1,0 +1,3 @@
+#statyczna trasa dla adresów MAC
+
+mac address-table static *MAC* vlan *nr vlanu do którego należy komputer* int *wybrany int*

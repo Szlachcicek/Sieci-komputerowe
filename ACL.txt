@@ -1,0 +1,20 @@
+#konfigurowanie szyfrowania np https
+access-list *nr* tcp permit *ip źródła + odwrócona maska* *ip docelowe + odwrócona maska* eq 443 #**  może być np any
+
+#jeśli jest to miedzy vlanami np w Roas to:
+int gigX/X/X.Y
+    ip access-group *nr* in/out #wchodzące/wychodzące
+
+
+access-list *nr* premit/deny...#<1-99> Standard, <100-199> extended
+#piszemy w 1 linijce np komunikacja tylko nparzystych adresów:
+acc 1 deny 192.168.0.0. 0.0.0.254
+acc 1 permit any 
+
+#na wybranym porcie
+    ip access-group *nr* in/out
+
+ip access-list standard/extended *nazwa*
+    permit...
+    deny...
+    itd

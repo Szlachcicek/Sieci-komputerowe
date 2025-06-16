@@ -1,0 +1,11 @@
+spanning tree mst conf
+    name *nazwa*
+    revision *nr rewizji*
+    instance *nr instancji* vlan *zakres vlanów*
+    exit
+    #domyślnie wszystko 0 poza nazwą
+
+spanning-tree mode mst
+spanning-tree mst *nr instancji* root primary/secondary
+
+#jeśli chcemy skonfigurować żeby przez konkretny port wychodziły dane "na świat"

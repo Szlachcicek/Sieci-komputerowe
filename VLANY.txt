@@ -11,3 +11,6 @@ sw t native vlan X
 
 #Natywny vlan nie tworzy się tak jak access vlan, trzeba go ręcznie stworzyć
 
+#blokowanie dostępu między komputerami
+int range gigX/X/X-Y
+    sw protected
