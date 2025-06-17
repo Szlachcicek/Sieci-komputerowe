@@ -5,3 +5,7 @@ router ospf 1 # 1 - nr procesu
 	passive-interface gigX/X/X
 	default-information originate
 
+#RIP
+router rip
+	version 2 #można, nie trzeba
+	network *adres sieci*
