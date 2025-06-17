@@ -19,7 +19,7 @@ int range gigX/X/X-Y
 
 #port blocking
 int ...
-    sm m a
+    sw m a
     sw port-security aging time 1-1440
     lub
     sw port-sec mac-address *adres*/sticky
