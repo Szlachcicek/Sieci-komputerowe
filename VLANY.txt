@@ -8,9 +8,27 @@ switchport access vlan  X
 int range gigX/X/X-Y
 sw m trunk
 sw t native vlan X
+sw t allowed vlan add/all/except/none/remove #można wybrać które vlany są trunkowane przez port zamiast usuwać je ze switcha (o ile nie jest clientem)
+
 
 #Natywny vlan nie tworzy się tak jak access vlan, trzeba go ręcznie stworzyć
 
 #blokowanie dostępu między komputerami
 int range gigX/X/X-Y
     sw protected
+
+#port blocking
+int ...
+    sm m a
+    sw port-security aging time 1-1440
+    lub
+    sw port-sec mac-address *adres*/sticky
+    lub
+    sw portsec maximum 1-132
+    lub
+    sw portsec violation protect/restrict/shutdown
+
+    #gdy chcemy zabezpieczyć żeby do portu gdzie powinien wpinać sie PC nie wpinać switcha (BPDU Guard)
+    sw m ac
+    spanning-tree portfast #przypisujemy statycznie dla stp że ten interfejs prowadzi do użytkownika końcowego
+    spanning-tree bpduguard enable #jak wykryje pakiet bpdu (od switcha) to port przejdzie w stan error-disabled

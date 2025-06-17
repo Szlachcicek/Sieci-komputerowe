@@ -1,5 +1,5 @@
 #konfigurowanie szyfrowania np https
-access-list *nr* *protokół(ip jest jak any)* permit *ip źródła + odwrócona maska* *ip docelowe + odwrócona maska* eq 443 #**  może być np any
+access-list *nr* tcp permit *ip źródła + odwrócona maska* *ip docelowe + odwrócona maska* eq 443 #**  może być np any
 
 #jeśli jest to miedzy vlanami np w Roas to:
 int gigX/X/X.Y
